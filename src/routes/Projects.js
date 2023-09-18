@@ -4,12 +4,12 @@ import AboutImg from "../assets/night.jpg";
 import Footer from "../components/Footer";
 import Trip from "../components/Trip";
 
-function Service() {
+function Projects() {
   return (
     <>
-      <h1>Call The Components</h1>
+      <h1>Call The projects</h1>
     </>
   );
 }
 
-export default Service;
+export default Projects;
