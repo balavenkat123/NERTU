@@ -25,7 +25,7 @@ function Hero(props) {
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100"
-          src="https://www.osmania.ac.in/sciencecollege/img/gallery/chemistry/chem2.jpg" alt="first slide"
+          src="https://www.getmyuni.com/assets/images/articles/articles-b03a809fc0f06118f4b790dbd1d0243a.webp" alt="first slide"
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>
