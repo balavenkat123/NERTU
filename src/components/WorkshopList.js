@@ -27,7 +27,7 @@ const WorkshopList = () => {
   return (
     <div className='App'>
       <h1>UpComming Workshops</h1><br/>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} className='mt-4'>
           <div className='tab'>
           <center>
             <h4>#1</h4>     

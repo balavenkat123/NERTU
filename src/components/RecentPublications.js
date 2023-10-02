@@ -25,10 +25,10 @@ const RecentPublications = () => {
       };
       return (
         <div className='App'>
-          <h1>research publications 
+          <h1 className='mt-5'>Research publications 
             
             </h1><br/>
-          <Carousel responsive={responsive}>
+          <Carousel responsive={responsive} className='mt-4'>
               <div className='tab'>
               <center>
                 <h4>#1</h4>     

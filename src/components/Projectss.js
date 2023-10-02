@@ -39,9 +39,9 @@ const Projectss = () => {
             </InputGroup></center>
           </Form>
         </div>
-        <Container >
+        
           
-          <Table striped bordered hover className='bg-light '>
+          <Table striped bordered hover className='bg-light mt-3 ml-3 mr-3'>
             <thead>
               <tr>
                 <th>S.No</th>
@@ -58,9 +58,9 @@ const Projectss = () => {
             <tbody>
               {data
                 .filter((item) => {
-                  return search.toLowerCase() === " "
+                  return search === " "
                     ? item
-                    : item.Title_Project.toLowerCase().includes(search);
+                    : item.Title_Project.includes(search);
                 })
                 .map((item, index) => (
                   <tr key={index}>
@@ -76,7 +76,7 @@ const Projectss = () => {
                 ))}
             </tbody>
           </Table>
-        </Container>
+        
       </div>
     );
 }
