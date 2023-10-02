@@ -1,9 +1,22 @@
 import "./HeroStyles.css";
 import { Carousel } from "react-bootstrap";
+// import { nertulogo } from "./assets/nertulogo";
 
 function Hero(props) {
   return (
     <>
+      {/* <div>
+        <div className="container">
+         <img src="https://cdn.siasat.com/wp-content/uploads/2021/06/Rf71c8d48135ed2f8a2c9779c2d25c215.jpg" alt="nertuImage" className="top-right-image"/>
+         <div>
+         <p className="collegetext">RESEARCH & TRAINING UNIT FOR NAVIGATIONAL ELECTRONICS (NERTU)</p>
+         <div className="text">
+          
+         <p>(Autonomous)</p><p>Osmania University, Hyderabad, Telangana, India</p><p>Accredited by NAAC with A+ Grade Category-I graded Autonomy by UGC</p>
+         </div>
+         </div>
+         </div>
+         </div> */}
       <Carousel>
       <Carousel.Item interval={500}>
         <img className="d-block w-100 "
