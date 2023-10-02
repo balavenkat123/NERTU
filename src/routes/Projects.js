@@ -1,15 +1,13 @@
-import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
-import AboutImg from "../assets/night.jpg";
-import Footer from "../components/Footer";
+import React from 'react'
+import Projectss from '../components/Projectss'
 
 
-function Projects() {
+const Projects = () => {
   return (
     <>
-      <h1>Call The projects</h1>
+      <Projectss/>
     </>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

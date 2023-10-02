@@ -50,7 +50,7 @@ const RecentPublications = () => {
                 <img className="product--image" src='https://ahduni.edu.in/site/assets/files/14754/1600_x_1080_fabrication_shop.1400x0.webp' alt="img 1"/>
                 <button className='card-button'>view full</button>
               </div>
-          </Carousel>;
+          </Carousel>
         </div>
       );
 }
