@@ -24,7 +24,7 @@ const Projectss = () => {
     // };
   
     return (
-      <div>
+      <div id="projects">
         <div>
             <h1 className='text-center text-info py-5 mt-5'>Projects</h1>
             <Form>
