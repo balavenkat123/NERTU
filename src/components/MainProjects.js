@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Projectss from './Projectss';
-import { useNavigate} from 'react-router-dom';
 
 const MainProjects = () => {
     const data = [
@@ -70,10 +69,6 @@ const MainProjects = () => {
             "Name of Investigators": "Dr.S.Ananda Mohan"
           }
     ]
-    const Navigate = useNavigate();
-    const seeMorebtn=()=>{
-      Navigate("/projects");
-    } 
   return (
     <div>
         <h1 className='text-start text-danger mx-2 mt-5 px-3'> Main Projects</h1>
@@ -112,7 +107,7 @@ const MainProjects = () => {
             </tbody>
           </Table> </center>     
         {/* </Container> */}
-        <button className='bg-info' onClick={seeMorebtn}>See Moree</button>
+        <button className='bg-info'>See Moree</button>
     </div>
   )
 }
