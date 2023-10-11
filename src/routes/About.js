@@ -3,11 +3,14 @@ import Navbar from "../components/Navbar";
 import AboutImg from "../assets/night.jpg";
 import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
+import Mainworkshops from "../components/Mainworkshops";
+
 
 function About() {
   return (
     <>
-      <h1>tjis is about</h1>
+      
+      <Mainworkshops/>
     </>
   );
 }
