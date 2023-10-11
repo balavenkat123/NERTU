@@ -32,7 +32,8 @@ const Mainworkshops = () => {
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Title </th>           
+            <th>Title </th>   
+            <th>subject</th>        
             <th>Duration</th>
             <th>Code</th>
                         
@@ -49,6 +50,7 @@ const Mainworkshops = () => {
               <tr key={index}>
                 <td>{item['S_No']}</td>
                 <td>{item.Title}</td>
+                <td>{item.Subject}</td>
                 <td>{item.Duration }</td>
                 <td>{item.Code}</td>
               </tr>
