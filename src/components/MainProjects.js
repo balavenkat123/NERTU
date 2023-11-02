@@ -70,7 +70,7 @@ const MainProjects = () => {
           }
     ]
   return (
-    <div>
+    <div className='m-5'>
         <h1 className='text-start text-danger mx-2 mt-5 px-3'> Main Projects</h1>
         
         {/* <Container > */}
@@ -90,12 +90,10 @@ const MainProjects = () => {
               </tr>
             </thead>
             <tbody>
-              {data
-                
-                .map((item, index) => (
+              {data.map((item, index) => (
                   <tr key={index}>
                     <td>{item['S.No']}</td>
-                    <td>{item.Title_Project}</td>
+                    <td className="text-start">{item.Title_Project}</td>
                     <td>{item["Amount "] }</td>
                     <td>{item.Start}</td>
                     <td>{item.End}</td>

@@ -11,16 +11,16 @@ const Mainworkshops = () => {
 
 
   return (
-    <div id="projects">
+    <div id="projects" className='m-5'>
     <div>
-        <h1 className='text-center text-info py-5 mt-5'>Workshopes</h1>
+        <h1 className='text-center text-info py-5 mt-5'>Workshops</h1>
         <Form>
             <center>
         <InputGroup className='w-75'>
 
           {/* onChange for search */}
           <Form.Control className='w-30'
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value.toLowerCase())}
             placeholder='Search projects'
           />
         </InputGroup></center>
@@ -32,8 +32,8 @@ const Mainworkshops = () => {
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Title </th>   
-            <th>subject</th>        
+            <th>Title</th>   
+            <th>Subject</th>        
             <th>Duration</th>
             <th>Code</th>
                         
@@ -44,12 +44,12 @@ const Mainworkshops = () => {
             .filter((item) => {
               return search === " "
                 ? item
-                : item.Title.includes(search);
+                : item.Title.toLowerCase().includes(search);
             })
             .map((item, index) => (
               <tr key={index}>
                 <td>{item['S_No']}</td>
-                <td>{item.Title}</td>
+                <td className="text-start">{item.Title}</td>
                 <td>{item.Subject}</td>
                 <td>{item.Duration }</td>
                 <td>{item.Code}</td>

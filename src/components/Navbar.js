@@ -13,15 +13,15 @@ class Navbar extends Component {
   render() {
     return (
 
-      <nav className="NavbarItems">
-        <h1 className="navbar-logo">NERTU</h1>
+      <nav className="NavbarItems" style={{height: 60, backgroundColor: "rgba(100, 0, 0, 0.5)"}}>
+        <h1 className="navbar-logo" style={{color:"rgb(0,0,0)"}}>NERTU</h1>
         <div className="menu-icons" onClick={this.handleClick}>
           <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           {MenuItems.map((item,index)=>{
             return(
-              <li key={index}>
+              <li key={index} style={{color:"rgb(0,0,0)"}}>
                 <Link className={item.cName} to={item.url}>
                   <i className={item.icon}></i>{item.title}
                 </Link>

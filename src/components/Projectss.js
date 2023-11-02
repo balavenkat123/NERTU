@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,20 +10,8 @@ const Projectss = () => {
     const [contacts, setContacts] = useState(data);
     const [search, setSearch] = useState('');
   
-    // const sortName = () => {
-    //   setContacts(
-    //     data.sort((a, b) => {
-    //       return a.first_name.toLowerCase() < a.first_name.toLowerCase()
-    //         ? -1
-    //         : a.first_name.toLowerCase() > a.first_name.toLowerCase()
-    //         ? 1
-    //         : 0;
-    //     })
-    //   );
-    // };
-  
     return (
-      <div id="projects">
+      <div id="projects" className='m-5'>
         <div>
             <h1 className='text-center text-info py-5 mt-5'>Projects</h1>
             <Form>
@@ -45,13 +32,13 @@ const Projectss = () => {
             <thead>
               <tr>
                 <th>S.No</th>
-                <th>Title of the project</th>
+                <th>Title</th>
                 <th>Amount ( Rs. in lakhs)</th>
                 <th>Start</th>
                 <th>End</th>
                 <th>Project Code</th>
-                <th>Name of Sponsoring Agency</th>
-                <th>Name of the Investigator</th>
+                <th>Sponsoring Agency</th>
+                <th>Investigator</th>
                             
               </tr>
             </thead>
@@ -60,12 +47,13 @@ const Projectss = () => {
                 .filter((item) => {
                   return search === " "
                     ? item
-                    : item.Title_Project.includes(search);
+                    : item.Title_Project.toLowerCase().includes(search),
+                    item['Name of Investigators'].toLowerCase().includes(search);
                 })
                 .map((item, index) => (
                   <tr key={index}>
                     <td>{item['S.No']}</td>
-                    <td>{item.Title_Project}</td>
+                    <td className="text-start">{item.Title_Project}</td>
                     <td>{item["Amount "] }</td>
                     <td>{item.Start}</td>
                     <td>{item.End}</td>
