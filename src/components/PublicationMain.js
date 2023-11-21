@@ -1,13 +1,9 @@
-// import './App.css';
 import React, { useState } from "react";
 import Table from 'react-bootstrap/Table';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Filter from "./Filter";
-import { Col, Container, Dropdown, ListGroup, Row } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 
-const data = [
+const dataList = [
   {
     "Sno": 1,
     "Type": "",
@@ -4131,7 +4127,7 @@ const data = [
   {
     "Sno": 516,
     "Type": "Conference",
-    "Title": "IEEE-TENCON 1989,IIT Bombay. Performance Sensitivity of Optimum Beam formers . Bombay, India.  November 1989",
+    "Title": "IEEE-TENCON 1989, IIT Bombay. Performance Sensitivity of Optimum Beam formers . Bombay, India.  November 1989",
     "Authors": "Shamal Mathur,  DC Reddy",
     "Year": 1989,
     "DOI": ""
@@ -4378,78 +4374,48 @@ const data = [
   }
 ]
 
-function Filter() {
-  const filterMenuOptions = {
-    Type: ["Journal", "Conference", "Technical"]
-  };
-  const [selectedFilterOption, setSelFilterOption] = useState(
-    Object.keys(filterMenuOptions)[0]
-  );
-
-  return (
-    <Dropdown>
-      <Dropdown.Toggle variant="warning">Filter</Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Container>
-          <Row style={{ minWidth: "50vw" }}>
-            <Col>
-              <ListGroup variant="flush">
-                {Object.keys(filterMenuOptions).map((fKey, id) => (
-                  <ListGroup.Item
-                    key={id}
-                    action
-                    active={selectedFilterOption === fKey}
-                    onClick={() => setSelFilterOption(fKey)}
-                    variant="success"
-                  >
-                    {fKey}
-                  </ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Col>
-            <Col>
-              <ListGroup>
-                {filterMenuOptions[selectedFilterOption].map((option, id) => (
-                  <Row key={id}>
-                    <Col xs="2">
-                      <input type="checkbox" />
-                    </Col>
-                    <Col>
-                      <p>{option}</p>
-                    </Col>
-                  </Row>
-                ))}
-              </ListGroup>
-            </Col>
-          </Row>
-        </Container>
-      </Dropdown.Menu>
-    </Dropdown>
-  );
-}
-
 function PublicationMain() {
 
-  const [search, setSearch] = useState(''); 
+  const [searchText, setSearchText] = useState('');
+  const [data, setData] = useState(dataList);
+
+  const excludeColumns = ["Sno", "DOI"];
+
+  const handleChange = (value) => {
+    setSearchText(value);
+    filterData(value);
+  };
+
+  const filterData = (value) => {
+    const lowercasedValue = value.toLowerCase().trim();
+
+    if(lowercasedValue === '') setData(dataList);
+
+    else{
+      const filteredData = dataList.filter((item) => {
+        return Object.keys(item).some((key) => 
+        excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
+        );
+      });
+      setData(filteredData);
+    }
+  };
+
+
   return (
     <div id="publication" className='m-5'>
     <div>
         <h1 className='text-center text-info py-5 mt-5'>Publications</h1>
         <Form>
-            <center>
-        <InputGroup className='w-75'>
+          <center>
+            <InputGroup className="w-75">
+              <Form.Control className="w-75" type="text" placeholder="Type to search..." value={searchText} onChange={(e) => handleChange(e.target.value)}/>
+            </InputGroup>
+          </center>
+        </Form>
 
-          {/* onChange for search */}
-          <Form.Control className='w-30'
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder='Search article'
-          />
-          <Filter/>
-        </InputGroup></center>
-      </Form>
     </div>
     
-      
       <Table striped bordered hover className='bg-light mt-3 ml-3 mr-3'>
         <thead>
           <tr>
@@ -4462,20 +4428,14 @@ function PublicationMain() {
           </tr>
         </thead>
         <tbody>
-          {data.filter((item) => {
-              return search === " "
-                ? item
-                : item.Title.toLowerCase().includes(search),
-                item.Authors.toLowerCase().includes(search);
-            })
-            .map((item, index) => (
-              <tr key={index}>
-                <td>{item.Sno}</td>
-                <td>{item.Type}</td>
-                <td className="text-start">{item.Title}</td>
-                <td>{item.Authors}</td>
-                <td>{item.Year}</td>
-                <td><a herf="{item.DOI}">Link</a></td>
+          {data.map((d, i) => (
+              <tr key={i}>
+                <td>{d.Sno}</td>
+                <td>{d.Type}</td>
+                <td className="text-start">{d.Title}</td>
+                <td>{d.Authors}</td>
+                <td>{d.Year}</td>
+                <td><a herf={`/${d.DOI}`}>Link</a></td>
               </tr>
             ))}
         </tbody>

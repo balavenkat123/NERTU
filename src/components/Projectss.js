@@ -4,12 +4,33 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { data } from './Data.js';
+import { dataList } from './ProjectData';
 
 const Projectss = () => {
-    const [contacts, setContacts] = useState(data);
+    const [data, setData] = useState(dataList);
     const [search, setSearch] = useState('');
+
+    const excludeColumns = ["S.No", "Amount"];
+
+    const handleChange = (value) => {
+      setSearch(value);
+      filterData(value);
+    }
+
+    const filterData = (value) => {
+      const lowercasedValue = value.toLowerCase().trim();
   
+      if(lowercasedValue === '') setData(dataList);
+  
+      else{
+        const filteredData = dataList.filter((item) => {
+          return Object.keys(item).some((key) => excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
+          );
+        })
+        setData(filteredData);
+      }
+    };
+
     return (
       <div id="projects" className='m-5'>
         <div>
@@ -19,9 +40,7 @@ const Projectss = () => {
             <InputGroup className='w-75'>
   
               {/* onChange for search */}
-              <Form.Control className='w-30'
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder='Search projects'
+              <Form.Control className="w-75" type="text" placeholder="Type to search..." value={search} onChange={(e) => handleChange(e.target.value)}
               />
             </InputGroup></center>
           </Form>
@@ -43,18 +62,11 @@ const Projectss = () => {
               </tr>
             </thead>
             <tbody>
-              {data
-                .filter((item) => {
-                  return search === " "
-                    ? item
-                    : item.Title_Project.toLowerCase().includes(search),
-                    item['Name of Investigators'].toLowerCase().includes(search);
-                })
-                .map((item, index) => (
+              {data.map((item, index) => (
                   <tr key={index}>
                     <td>{item['S.No']}</td>
                     <td className="text-start">{item.Title_Project}</td>
-                    <td>{item["Amount "] }</td>
+                    <td>{item["Amount"] }</td>
                     <td>{item.Start}</td>
                     <td>{item.End}</td>
                     <td>{item['Project Code']}</td>

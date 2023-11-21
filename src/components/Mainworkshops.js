@@ -1,13 +1,35 @@
 import React, { useState } from 'react';
-import {workshopsData} from "./MainworkshopsData"
+import { workshopsData } from "./MainworkshopsData";
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Mainworkshops = () => {
-  const [contacts, setContacts] = useState(workshopsData);
-  const [search, setSearch] = useState('');  
+  const [data, setData] = useState(workshopsData);
+  const [searchText, setSearchText] = useState('');
+
+  const excludeColumns = ["S_No", "Code"];
+
+  const handleChange = (value) => {
+    setSearchText(value);
+    filterData(value);
+  }
+
+  const filterData = (value) => {
+    const lowercasedValue = value.toLowerCase().trim();
+
+    if(lowercasedValue === '') setData(workshopsData);
+
+    else{
+      const filteredData = workshopsData.filter((item) => {
+        return Object.keys(item).some((key) => 
+        excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
+        );
+      });
+      setData(filteredData);
+    }
+  };
 
 
   return (
@@ -15,16 +37,12 @@ const Mainworkshops = () => {
     <div>
         <h1 className='text-center text-info py-5 mt-5'>Workshops</h1>
         <Form>
-            <center>
-        <InputGroup className='w-75'>
-
-          {/* onChange for search */}
-          <Form.Control className='w-30'
-            onChange={(e) => setSearch(e.target.value.toLowerCase())}
-            placeholder='Search projects'
-          />
-        </InputGroup></center>
-      </Form>
+          <center>
+            <InputGroup>
+            <Form.Control className="w-75" type="text" placeholder="Type to search..." value={searchText} onChange={(e) => handleChange(e.target.value)}/>
+            </InputGroup>
+          </center>
+        </Form>
     </div>
     
       
@@ -40,13 +58,7 @@ const Mainworkshops = () => {
           </tr>
         </thead>
         <tbody>
-          {workshopsData
-            .filter((item) => {
-              return search === " "
-                ? item
-                : item.Title.toLowerCase().includes(search);
-            })
-            .map((item, index) => (
+          {data.map((item, index) => (
               <tr key={index}>
                 <td>{item['S_No']}</td>
                 <td className="text-start">{item.Title}</td>
