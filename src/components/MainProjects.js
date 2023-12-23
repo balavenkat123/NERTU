@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Projectss from './Projectss';
 
 const MainProjects = () => {
     const data = [
@@ -70,7 +66,7 @@ const MainProjects = () => {
           }
     ]
   return (
-    <div>
+    <div className='m-5'>
         <h1 className='text-start text-danger mx-2 mt-5 px-3'> Main Projects</h1>
         
         {/* <Container > */}
@@ -90,12 +86,10 @@ const MainProjects = () => {
               </tr>
             </thead>
             <tbody>
-              {data
-                
-                .map((item, index) => (
+              {data.map((item, index) => (
                   <tr key={index}>
                     <td>{item['S.No']}</td>
-                    <td>{item.Title_Project}</td>
+                    <td className="text-start">{item.Title_Project}</td>
                     <td>{item["Amount "] }</td>
                     <td>{item.Start}</td>
                     <td>{item.End}</td>

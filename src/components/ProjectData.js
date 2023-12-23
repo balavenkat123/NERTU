@@ -1,11 +1,11 @@
-export const data = [
+export const dataList = [
     {
         "S.No": 1,
         "Title_Project": "Development of Signal Processing Algorithms for Active seeking Radar (SPARS)",
         "Amount ": 72.05,
         "Start": 1987,
         "End": 1991,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-DRDL, Hyderabad",
         "Name of Investigators": "Dr.Y.Yoganandam"
       },
@@ -15,7 +15,7 @@ export const data = [
         "Amount ": 0.10,
         "Start": 1989,
         "End": 1990,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-ASWAC, Bangalore",
         "Name of Investigators": "Dr.V.M.Pandhari Pande"
       },
@@ -25,7 +25,7 @@ export const data = [
         "Amount ": 2.25,
         "Start": 1989,
         "End": 1992,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "ISRO-SAC, Ahemadabad",
         "Name of Investigators": "Dr.NLM.Murukutla"
       },
@@ -35,47 +35,47 @@ export const data = [
         "Amount ": 0.14,
         "Start": 1989,
         "End": 1990,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-ASWAC, Bangalore",
         "Name of Investigators": "Dr.S.Vathsal"
       },
       {
         "S.No": 5,
         "Title_Project": "Effects of Arrestor Barrier Building on ILS glide path at Bangalore Airport",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1989,
         "End": 1990,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "NAA, New Delhi",
         "Name of Investigators": "Dr.S.Ananda Mohan"
       },
       {
         "S.No": 6,
         "Title_Project": "A New Deshgn Configuration of CVOR antenna was given to GCEL based on which GCEL is fabricating the antennas",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1991,
         "End": 1992,
-        "Project Code": null,
-        "Name of Sponsoring Agency": null,
+        "Project Code": "",
+        "Name of Sponsoring Agency": "",
         "Name of Investigators": "Dr.S.Ananda Mohan"
       },
       {
         "S.No": 7,
         "Title_Project": "Techniques for Improvement of Radiation Characteristics of Alford Loop Array for CVOR to GCEL",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1991,
         "End": 1992,
-        "Project Code": null,
-        "Name of Sponsoring Agency": null,
+        "Project Code": "",
+        "Name of Sponsoring Agency": "",
         "Name of Investigators": "Dr.S.Ananda Mohan"
       },
       {
         "S.No": 8,
         "Title_Project": "Development of Kalman filter algorithms for sequential GPS Receiver",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1991,
         "End": 1992,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "ISRO-SAC, Ahemadabad",
         "Name of Investigators": "Dr.NLM.Murukutla"
       },
@@ -85,24 +85,24 @@ export const data = [
         "Amount ": 0.40,
         "Start": 1991,
         "End": 1992,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-ADA, Bangalore",
         "Name of Investigators": "Dr.NLM.Murukutla"
       },
       {
         "S.No": 10,
         "Title_Project": "Analysis_Effects of Ground Obstruction on ILS glide path at Delhi Airport at Runway-27",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1991,
         "End": 1992,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "NAA, New Delhi",
         "Name of Investigators": "Mr.K.L.N.Rao"
       },
       {
         "S.No": 11,
         "Title_Project": "Configuration on the range tracking accuracy of targets",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1991,
         "End": 1992,
         "Project Code": "11/PH-1",
@@ -112,10 +112,10 @@ export const data = [
       {
         "S.No": 12,
         "Title_Project": "A new method for finding Electromagnetic Emitter Location",
-        "Amount ": null,
+        "Amount ": "",
         "Start": 1992,
         "End": 1992,
-        "Project Code": null,
+        "Project Code": "",
         "Name of Sponsoring Agency": "BEL, Hyderabad",
         "Name of Investigators": "Dr.D.C.Reddy, K.Deergha Rao"
       },
@@ -214,7 +214,7 @@ export const data = [
         "End": 1995,
         "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-ADA, Bangalore",
-        "Name of Investigators": "Dr. K. Deergha Rao"
+        "Name of Investigators": "Dr.K.Deergha Rao"
       },
       {
         "S.No": 23,
@@ -223,7 +223,7 @@ export const data = [
         "End": 1994,
         "Project Code": "",
         "Name of Sponsoring Agency": "BEL, Bangalore",
-        "Name of Investigators": "Dr. K. Deergha Rao"
+        "Name of Investigators": "Dr.K.Deergha Rao"
       },
       {
         "S.No": 24,
@@ -233,7 +233,7 @@ export const data = [
         "End": 1994,
         "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-DTSR, New Delhi",
-        "Name of Investigators": "Dr. A.D. Sarma, M.V.S.N. Prasad (NPL)"
+        "Name of Investigators": "Dr.A.D.Sarma, M.V.S.N. Prasad (NPL)"
       },
       {
         "S.No": 25,
@@ -242,7 +242,7 @@ export const data = [
         "End": 1996,
         "Project Code": "",
         "Name of Sponsoring Agency": "DRDO-DRDL, Hyderabad",
-        "Name of Investigators": "Dr. Y. Yoganandam"
+        "Name of Investigators": "Dr.Y.Yoganandam"
       },
       {
         "S.No": 26,

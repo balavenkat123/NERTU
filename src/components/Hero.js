@@ -5,18 +5,6 @@ import { Carousel } from "react-bootstrap";
 function Hero(props) {
   return (
     <>
-      {/* <div>
-        <div className="container">
-         <img src="https://cdn.siasat.com/wp-content/uploads/2021/06/Rf71c8d48135ed2f8a2c9779c2d25c215.jpg" alt="nertuImage" className="top-right-image"/>
-         <div>
-         <p className="collegetext">RESEARCH & TRAINING UNIT FOR NAVIGATIONAL ELECTRONICS (NERTU)</p>
-         <div className="text">
-          
-         <p>(Autonomous)</p><p>Osmania University, Hyderabad, Telangana, India</p><p>Accredited by NAAC with A+ Grade Category-I graded Autonomy by UGC</p>
-         </div>
-         </div>
-         </div>
-         </div> */}
       <Carousel>
       <Carousel.Item interval={500}>
         <img className="d-block w-100 "
@@ -49,7 +37,7 @@ function Hero(props) {
       </Carousel.Item>
     </Carousel>
 
-    <div>
+    <div className="m-5">
       <h1 className="font-bold mt-2 mx-auto">About NERTU</h1>
 
     </div>
@@ -63,7 +51,7 @@ function Hero(props) {
 
            <br/> The university began functioning in 1918 in a building adjacent to the Nizam College at Basheerbagh.[14] Arts and theology were the only two faculties offered, and the first batch consisted of 225 students and 25 faculty members.[15]
 
-           <br/>The government invited Patrick Geddes and Edwin Jasper to set up a permanent campus of the university.[16] Geddes surveyed prospective locations and presented his report in 1923.[13] Jasper drew up the building plans and the Nizam laid the foundation stone for the campus on July 5, 1934.[13] After Jasper left Hyderabad, the state architect Zain Yar Jung supervised the construction of the campus.[
+           <br/>The government invited Patrick Geddes and Edwin Jasper to set up a permanent campus of the university.[16] Geddes surveyed prospective locations and presented his report in 1923.[13] Jasper drew up the building plans and the Nizam laid the foundation stone for the campus on July 5, 1934.[13] After Jasper left Hyderabad, the state architect Zain Yar Jung supervised the construction of the campus.
       </p>
     </div>
     </>

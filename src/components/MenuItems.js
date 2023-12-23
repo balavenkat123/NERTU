@@ -29,5 +29,10 @@ export const MenuItems = [
     icon:"fa-solid fa-address-book",
     cName:"nav-links"
   },
-  
+  {
+    title: "publication",
+    url: "/publications",
+    icon:"fa-solid fa-address-book",
+    cName:"nav-links"
+  },
 ];
